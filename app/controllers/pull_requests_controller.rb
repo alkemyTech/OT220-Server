@@ -1,0 +1,3 @@
+class PullRequestController < ApplicationController
+
+end
