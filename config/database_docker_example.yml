@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres_db
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: OT220_Server_development
+
+test:
+  <<: *default
+  host: postgres_db
+  database: OT220_Server_test
+
+# production:
+#   <<: *default
+#   database: OT220_Server_production
+#   username: OT220_Server
+#   password: <%= ENV['OT220_SERVER_DATABASE_PASSWORD'] %>
