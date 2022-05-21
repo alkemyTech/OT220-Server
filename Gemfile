@@ -8,6 +8,7 @@ ruby '3.0.2'
 gem 'rails', '~> 6.1.5'
 
 gem 'bootsnap', '>= 1.4.4', require: false # https://rubygems.org/gems/bootsnap
+gem 'discard', '~> 1.2' # https://rubygems.org/gems/discard
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6' # https://rubygems.org/gems/dotenv-rails
 gem 'jbuilder', '~> 2.7' # https://rubygems.org/gems/jbuilder
 gem 'pg', '~> 1.1' # https://rubygems.org/gems/pg
