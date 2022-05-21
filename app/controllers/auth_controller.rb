@@ -6,6 +6,7 @@ class AuthController < ApplicationController
   def register
     @user = User.new(auth_params)
     if @user.save
+      Sendeable.send_email(@user.email, 'Bienvenido a Somos Más')
       render @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity

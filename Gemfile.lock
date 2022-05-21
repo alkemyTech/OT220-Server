@@ -235,6 +235,9 @@ GEM
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
+    ruby_http_client (3.5.5)
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
     sexp_processor (4.16.1)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
@@ -272,7 +275,7 @@ DEPENDENCIES
   bcrypt (~> 3.1)
   bootsnap (>= 1.4.4)
   brakeman (~> 5.1, >= 5.1.2)
-  discard (~> 1.2)
+  discard (~> 1.2, >= 1.2.1)
   dotenv-rails (~> 2.7, >= 2.7.6)
   factory_bot_rails (~> 5.1, >= 5.1.1)
   faker (~> 2.13)
@@ -290,6 +293,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  sendgrid-ruby (~> 6.6, >= 6.6.2)
   shoulda-matchers (~> 4.1, >= 4.1.2)
   simplecov (~> 0.13.0)
   spring (~> 2.1)
