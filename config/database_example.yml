@@ -84,3 +84,4 @@ production:
   database: OT220_Server_production
   username: OT220_Server
   password: <%= ENV['OT220_SERVER_DATABASE_PASSWORD'] %>
+
