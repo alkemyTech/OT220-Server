@@ -66,6 +66,7 @@ build-iPhoneSimulator/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
 # Ignore custom database configuration
 /config/database.yml
