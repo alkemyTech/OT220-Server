@@ -95,6 +95,9 @@ ActiveRecord::Schema.define(version: 2022_06_09_222240) do
     t.text "about_us_text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "facebook_url"
+    t.string "twitter_url"
+    t.string "instagram_url"
   end
 
   create_table "roles", force: :cascade do |t|
