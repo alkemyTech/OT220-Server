@@ -3,6 +3,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:destroy]
 
+  def index
+    @categories = Category.kept
+  end
+
   def destroy
     if @category.discard
       render json: { message: 'Category succesfully deleted' }, status: :ok
