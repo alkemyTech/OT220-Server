@@ -1,5 +1,5 @@
 # base-ong-server-ruby
-Repositorio base para Caso ONG de Ruby
+Repositorio base para Caso ONG de Ruby.
 
 ![image](https://user-images.githubusercontent.com/56528396/154179983-2317c03c-9a74-4c4f-8fc5-b07ef972c470.png)
 
