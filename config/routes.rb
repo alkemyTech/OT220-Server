@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :organizations, only: [] do
     get 'public', on: :member
   end
-  resources :users, only: [:index]
+  resources :users, only: %i[index update]
 end
