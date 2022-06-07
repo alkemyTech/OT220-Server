@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2022_06_09_222240) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
     t.datetime "discarded_at"
+    t.string "news_type"
     t.index ["category_id"], name: "index_news_on_category_id"
     t.index ["discarded_at"], name: "index_news_on_discarded_at"
   end

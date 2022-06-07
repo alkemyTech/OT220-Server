@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   delete 'auth/delete/:id', to: 'auth#destroy'
   
   resources :categories, only: %i[index delete]
-  resources :news, only: %i[destroy]
+  resources :news, only: %i[create destroy]
   resources :organizations, only: [] do
     get 'public', on: :member
   end
