@@ -80,6 +80,7 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.5.0)
       aws-eventstream (~> 1, >= 1.0.2)
+    bcrypt (3.1.18)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     brakeman (5.2.3)
@@ -117,6 +118,7 @@ GEM
       activesupport (>= 5.0.0)
     jmespath (1.6.1)
     json (2.6.2)
+    jwt (2.3.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -267,6 +269,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 3.0, >= 3.0.3)
   aws-sdk-s3
+  bcrypt (~> 3.1)
   bootsnap (>= 1.4.4)
   brakeman (~> 5.1, >= 5.1.2)
   discard (~> 1.2)
@@ -274,6 +277,7 @@ DEPENDENCIES
   factory_bot_rails (~> 5.1, >= 5.1.1)
   faker (~> 2.13)
   jbuilder (~> 2.7)
+  jwt (~> 2.3)
   listen (~> 3.3)
   pg (~> 1.1)
   pry-byebug (~> 3.9)

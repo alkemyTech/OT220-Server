@@ -8,8 +8,9 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :photo
       t.datetime :discarded_at
       t.timestamps
+
+      t.index :email, unique: true
+      t.index :discarded_at
     end
-    # add index:
-    add_index :users, :discarded_at
   end
 end
