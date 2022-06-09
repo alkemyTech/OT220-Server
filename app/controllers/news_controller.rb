@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class NewsController < ApplicationController
-  before_action :set_news, only: [:destroy]
+  before_action :set_news, only: %i[details destroy]
+
+  def details; end
+
   def create
     @news = News.new(news_params)
     if @news.save
@@ -10,7 +13,7 @@ class NewsController < ApplicationController
       render json: @news.errors, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     if @news.discard
       render json: { message: 'News deleted' }, status: :ok
