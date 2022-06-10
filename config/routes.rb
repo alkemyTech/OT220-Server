@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'auth/register'
   delete 'auth/delete/:id', to: 'auth#destroy'
   
-  resources :activities, only: %i[create]
+  resources :activities, only: %i[update create]
   resources :categories, only: %i[index delete]
   resources :news, only: %i[create update destroy] do
     get 'details', on: :member
