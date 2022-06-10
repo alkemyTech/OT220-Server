@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class NewsController < ApplicationController
-  before_action :set_news, only: %i[details destroy]
+  before_action :set_news, only: %i[details update destroy]
 
   def details; end
 
@@ -11,6 +11,14 @@ class NewsController < ApplicationController
       render @news, status: :created
     else
       render json: @news.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @news.update(news_params)
+      render json: @user, status: :ok
+    else
+      render json: { message: 'Unable to update News' }, status: :not_found
     end
   end
 

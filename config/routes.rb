@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :activities, only: %i[create]
   resources :categories, only: %i[index delete]
-  resources :news, only: %i[create destroy] do
+  resources :news, only: %i[create update destroy] do
     get 'details', on: :member
   end
   resources :organizations, only: [] do
