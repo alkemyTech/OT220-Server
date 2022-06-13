@@ -10,6 +10,14 @@ class AuthController < ApplicationController
       render @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
+  end
+
+  def destroy
+    user = User.find_by(id: params[:id])
+    if user&.discard
+      render json: user, status: :ok
+    else
+      render json: 'user not deleted', status: :unprocessable_entity
     end
   end
 
