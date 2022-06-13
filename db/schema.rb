@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 2022_06_09_222240) do
     t.index ["discarded_at"], name: "index_categories_on_discarded_at"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "phone"
+    t.string "email"
+    t.string "message"
+    t.datetime "discarded_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "name", null: false
     t.string "facebook_url"
@@ -138,10 +148,7 @@ ActiveRecord::Schema.define(version: 2022_06_09_222240) do
     t.bigint "role_id", null: false
     t.index ["discarded_at"], name: "index_users_on_discarded_at"
     t.index ["email"], name: "index_users_on_email", unique: true
-<<<<<<< HEAD
     t.index ["role_id"], name: "index_users_on_role_id"
-=======
->>>>>>> d52b6fc (feat OT-220-32: endpoint to delete Users)
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
