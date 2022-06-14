@@ -23,6 +23,7 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.9', platform: :mri # https://rubygems.org/gems/pry-byebug
   gem 'pry-rails', '~> 0.3.9' # https://rubygems.org/gems/pry-rails
   gem 'rspec-rails', '~> 4.1' # https://rubygems.org/gems/rspec-rails
+  gem 'rswag', '~> 2.5' # https://rubygems.org/gems/rswag
 end
 
 group :development do
@@ -43,6 +44,5 @@ group :test do
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2' # https://rubygems.org/gems/shoulda-matchers
   gem 'simplecov', '~> 0.13.0', require: false # https://rubygems.org/gems/simplecov
 end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
