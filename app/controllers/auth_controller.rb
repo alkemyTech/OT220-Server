@@ -10,6 +10,7 @@ class AuthController < ApplicationController
       render @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
