@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete 'auth/delete/:id', to: 'auth#destroy'
   
   resources :activities, only: %i[update create]
-  resources :categories, only: %i[index create update delete]
+  resources :categories, only: %i[index create update destroy]
   resources :contacts, only: :create
   resources :news, only: %i[create update destroy] do
     get 'details', on: :member
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     get 'public', on: :member
   end
   resources :users, only: %i[index update]
+  resources :slides
 end
