@@ -1,4 +1,5 @@
 class SlidesController < ApplicationController
+  before_action :set_slide, only: %i[show]
   def create
     @slide = Slide.new(slide_params)
     if @slide.save
@@ -6,6 +7,16 @@ class SlidesController < ApplicationController
     else
       render json: @slide.errors, status: :unprocessable_entity
     end
+  end
+
+  def show
+    render @slide
+  end
+
+  private
+
+  def set_slide
+    @slide = Slide.find(params[:id])
   end
 
   def slide_params
