@@ -7,6 +7,15 @@ class CategoriesController < ApplicationController
     @categories = Category.kept
   end
 
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      render @category, status: :created
+    else
+      render json: @category.errors, status: :unprocessable_entity
+    end
+  end
+
   def update
     if @category.update(category_params)
       render json: @category, status: :ok
