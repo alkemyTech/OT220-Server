@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SlidesController < ApplicationController
   before_action :set_slide, only: %i[show]
   def create
@@ -11,6 +13,10 @@ class SlidesController < ApplicationController
 
   def show
     render @slide
+  end
+
+  def index
+    render json: Slide.all
   end
 
   private
