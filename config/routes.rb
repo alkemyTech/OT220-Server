@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   resources :activities, only: %i[update create]
   resources :categories, only: %i[index delete]
+  resources :contacts, only: :create
   resources :news, only: %i[create update destroy] do
     get 'details', on: :member
   end
