@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     get 'public', on: :member
   end
   resources :users, only: %i[index update]
+  resources :slides
 end
