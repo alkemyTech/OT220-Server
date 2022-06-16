@@ -148,7 +148,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_222240) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id", null: false
     t.index ["discarded_at"], name: "index_users_on_discarded_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
