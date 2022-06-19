@@ -3,4 +3,5 @@
 class ApplicationController < ActionController::API
   include Sendeable
   include ExceptionHandler
+  include Authorized
 end

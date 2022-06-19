@@ -16,7 +16,7 @@ class NewsController < ApplicationController
 
   def update
     if @news.update(news_params)
-      render json: @user, status: :ok
+      render json: @news, status: :ok
     else
       render json: { message: 'Unable to update News' }, status: :not_found
     end
