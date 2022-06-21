@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[update destroy]
-  before_action :authorize_request, except: :login
+  before_action :authorize_request, except: %i[login register]
   include Authenticable
 
   def index
