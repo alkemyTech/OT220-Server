@@ -20,6 +20,14 @@ class SlidesController < ApplicationController
     render json: Slide.all
   end
 
+  def update
+    if @slide.update(slide_params)
+      render json: @slide, status: :ok
+    else
+      render json: { message: 'Unable to update slide' }, status: :not_found
+    end
+  end
+
   private
 
   def set_slide
