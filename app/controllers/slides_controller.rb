@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SlidesController < ApplicationController
+  before_action :authorize_request
   before_action :set_slide, only: %i[show]
   def create
     @slide = Slide.new(slide_params)

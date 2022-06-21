@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class NewsController < ApplicationController
+  before_action :authorize_request
   before_action :set_news, only: %i[details update destroy]
 
   def details; end
