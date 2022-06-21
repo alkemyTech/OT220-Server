@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :organizations, only: [] do
     get 'public', on: :member
   end
-  resources :slides, only: %i[index show create]
+  resources :slides, only: %i[index show create update]
   resources :users, only: %i[index update]
 end
