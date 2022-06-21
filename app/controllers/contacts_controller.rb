@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
+  before_action :authorize_request
   def create
     @contact = Contact.new(contact_params)
     if @contact.save

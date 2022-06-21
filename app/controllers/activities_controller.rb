@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ActivitiesController < ApplicationController
+  before_action :authorize_request
   before_action :set_activity, only: [:update]
 
   def create
@@ -11,7 +12,7 @@ class ActivitiesController < ApplicationController
       render json: @activity.errors, status: :unprocessable_entity
     end
   end
-  
+
   def update
     if @activity.update(activity_params)
       render json: @activity, status: :ok

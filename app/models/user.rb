@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_secure_password
   include Discard::Model
 
   belongs_to :role
-  validates :first_name, :last_name, :email, :password, presence: true
-  validates :email, uniqueness: true
-  after_validation :set_hash_password
-
-  def set_hash_password
-    self.password = JsonWebToken.encode(password)
-  end
+  validates :first_name, :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
 end

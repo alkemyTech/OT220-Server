@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api/docs'
   mount Rswag::Api::Engine => '/api/docs'
-  post 'auth/register'
-  post '/auth/login', to: 'authentication#login'
-  delete 'auth/delete/:id', to: 'auth#destroy'
+  post 'auth/register', to: 'users#register'
+  post '/auth/login', to: 'users#login'
+  delete 'auth/delete/:id', to: 'users#destroy'
   get '/*a', to: 'application#not_found'
 
   resources :activities, only: %i[update create]  
@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     get 'public', on: :member
   end
   resources :slides, only: %i[index show create]
-  resources :users, param: :_username, only: %i[index update]
+  resources :users, only: %i[index update]
 end
