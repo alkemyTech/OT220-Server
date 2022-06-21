@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post 'auth/register', to: 'users#register'
   post '/auth/login', to: 'users#login'
   delete 'auth/delete/:id', to: 'users#destroy'
+
+  # esta es una prueba
   get '/*a', to: 'application#not_found'
 
   resources :activities, only: %i[update create]  
