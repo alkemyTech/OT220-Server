@@ -20,6 +20,14 @@ class SlidesController < ApplicationController
     render json: Slide.all
   end
 
+  def destroy
+    if @slide.discard
+      ender json: { message: 'Slide deleted' }, status: :ok
+    else
+      render json: { message: 'Slide not deleted' }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_slide
