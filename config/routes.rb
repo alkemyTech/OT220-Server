@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :slides, only: %i[index show create]
   resources :users, only: %i[index update]
+  resources :members, only: %i[update]
 end
