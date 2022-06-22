@@ -5,6 +5,8 @@ class User < ApplicationRecord
   include Discard::Model
 
   belongs_to :role
-  validates :first_name, :last_name, presence: true
-  validates :email, presence: true, uniqueness: true
+  
+  validates :first_name, :last_name, :email, :password_digest, presence: true
+  validates :email, uniqueness: true, format: { with: /@/ }
+  validates :password, length: { minimum: 8 }
 end
