@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   post 'auth/register', to: 'users#register'
   post '/auth/login', to: 'users#login'
   delete 'auth/delete/:id', to: 'users#destroy'
-  get '/*a', to: 'application#not_found'
-
+  
   resources :activities, only: %i[update create]  
   resources :categories, only: %i[index create update destroy]
   resources :contacts, only: :create
@@ -17,4 +16,5 @@ Rails.application.routes.draw do
   end
   resources :slides, only: %i[index show create]
   resources :users, only: %i[index update]
+  get '/*a', to: 'application#not_found'
 end
