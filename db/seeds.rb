@@ -47,6 +47,21 @@ Activity.create([
         alumnos y con las instancias municipales, provinciales y nacionales que
         correspondan.'
     }
-]
-)
+])
 puts 'Actividades creadas.'
+
+Role.create([
+              { name: 'user', description: 'Usuario' },
+              { name: 'admin', description: 'Administrador' }
+            ])
+puts 'Roles creados:'
+Role.all.each { |role| puts "* #{role.name}" }
+User.create([
+              { first_name: 'Ender', last_name: 'Ruiz', email: 'user1@gmail.com', password: 'alkemy123', role: Role.first },
+              { first_name: 'Joaquin', last_name: 'Logiudice', email: 'user2@gmail.com', password: 'alkemy123', role: Role.first },
+              { first_name: 'Danielid', last_name: 'Ramirez', email: 'admin1@gmail.com', password: 'alkemy123', role: Role.last },
+              { first_name: 'Luis', last_name: 'Castro Martinez', email: 'admin2@gmail.com', password: 'alkemy123', role: Role.last },
+              { first_name: 'Miguel', last_name: 'Liendo', email: 'admin2@gmail.com', password: 'alkemy123', role: Role.last }
+            ])
+puts 'Usuarios creados:'
+User.all.each { |user| puts "*#{user.email}" }
