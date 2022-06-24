@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :role do
-    name { 'MyString' }
-    description { 'MyString' }
+    name { Faker::Name.name }
+    description { Faker::Lorem.sentence }
   end
 end
