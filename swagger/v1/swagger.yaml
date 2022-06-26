@@ -3,9 +3,85 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
-paths: {}
+paths:
+  "/categories":
+    get:
+      summary: list categories
+      tags:
+      - Category
+      responses:
+        '200':
+          description: List categories
+    post:
+      summary: Creates a category
+      tags:
+      - Category
+      security:
+      - api_key: []
+      parameters:
+      - name: api_key
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: category created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+              required:
+              - name
+  "/categories/{id}":
+    delete:
+      summary: Delete a category
+      tags:
+      - Category
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: category deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                required:
+                - id
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                required:
+                - id
+        '404':
+          description: category not found
 servers:
-- url: https://{defaultHost}
+- url: http://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: localhost:3000
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
