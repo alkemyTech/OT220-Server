@@ -2,11 +2,22 @@
 
 FactoryBot.define do
   factory :user do
-    first_name { 'MyString' }
-    last_name { 'MyString' }
-    email { 'MyString' }
+    first_name { 'Joaquin' }
+    last_name { 'Logiudice' }
+    email { 'juakoloyu@gmail.com' }
     password { 'MyString' }
     photo { 'MyString' }
-    role { nil }
+    role
+
+    trait :admin do
+      role { create(:admin_role) }
+    end
+
+    trait :normal_user do
+      role { create(:user_role) }
+    end
+
+    factory :admin_user, traits: [:admin]
+    factory :normal_user, traits: [:normal_user]
   end
 end

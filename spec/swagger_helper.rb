@@ -24,14 +24,23 @@ RSpec.configure do |config|
       paths: {},
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost:3000'
             }
           }
         }
-      ]
+      ],
+      components: {
+        securitySchemes: {
+          api_key: {
+            type: :apiKey,
+            name: 'api_key',
+            in: :header
+          }
+        }
+      }
     }
   }
 

@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :category do
-    name { 'MyString' }
-    description { 'MyString' }
+    name { 'Good Category' }
+    description { 'Test category' }
   end
 end
