@@ -3,8 +3,22 @@
 FactoryBot.define do
   factory :activity do
     name { 'MyString' }
+    content { 'MyText' }
     image { 'MyString' }
-    content { 'MyString' }
-    discarded_at { '2022-05-24 18:03:36' }
+
+    trait :good do
+      name { Faker::Lorem.sentence }
+      content { Faker::Lorem.paragraph }
+      image { Faker::Lorem.sentence }
+    end
+
+    trait :bad do
+      name { nil }
+      content { nil }
+      image { nil }
+    end
+
+    factory :good_activities, traits: [:good]
+    factory :bad_activities, traits: [:bad]
   end
 end
